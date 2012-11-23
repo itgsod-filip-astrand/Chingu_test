@@ -29,21 +29,24 @@ class player < Chingu::GameObject
 	end
 	def left
 		unless @x - 28 <= 0
-		@x -= @speed
+			@x -= @speed
 		end
 	end
 	def right
 		unless @x +28 <= 800
-		@x += @speed
+			@x += @speed
+		end
 	end
 	def up
 		unless @y - 28 <= 0
-		@y -= @speed
+			@y -= @speed
+		end
 	end
 	def down
 		unless @y + 28 <= 0
-		@y += @speed
-	end
+			@y += @speed
+		end
+end
 
 end
 Game.new.show
