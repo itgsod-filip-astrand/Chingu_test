@@ -26,15 +26,20 @@ class player < Chingu::GameObject
 		}
 	end
 	def left
+		unless @x - 28 <= 0
 		@x -=1
+		end
 	end
 	def right
+		unless @x +28 <= 800
 		@x +=1
 	end
 	def up
+		unless @y - 28 <= 0
 		@y -=2
 	end
 	def down
+		unless @y + 28 <= 0
 		@y +=2
 	end
 
