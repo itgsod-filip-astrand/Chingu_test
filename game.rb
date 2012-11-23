@@ -13,13 +13,13 @@ class Game < Chingu::Window
 
 end
 
-class player < Chingu::GameObject
+class Player < Chingu::GameObject
 	
 	# Meta-constructor
 	def setup
-		@x, @y = 350, 400
+		@x, @y = 750, 400
 		@image = Gosu::Image["spaceship.png"]
-		@speed
+		@speed = 4
 		self.input = {
 			holding_left: :left,
 			holding_right: :right,
@@ -33,7 +33,7 @@ class player < Chingu::GameObject
 		end
 	end
 	def right
-		unless @x +28 <= 800
+		unless @x + 28 >= 800
 			@x += @speed
 		end
 	end
@@ -43,7 +43,7 @@ class player < Chingu::GameObject
 		end
 	end
 	def down
-		unless @y + 28 <= 0
+		unless @y + 28 >= 600
 			@y += @speed
 		end
 end
