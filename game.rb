@@ -7,6 +7,7 @@ class Game < Chingu::Window
 		super
 		self.input = {esc: :exit}
 		@player = Player.create
+
 	end
 
 
@@ -18,6 +19,7 @@ class player < Chingu::GameObject
 	def setup
 		@x, @y = 350, 400
 		@image = Gosu::Image["spaceship.png"]
+		@speed
 		self.input = {
 			holding_left: :left,
 			holding_right: :right,
@@ -27,20 +29,20 @@ class player < Chingu::GameObject
 	end
 	def left
 		unless @x - 28 <= 0
-		@x -=1
+		@x -= @speed
 		end
 	end
 	def right
 		unless @x +28 <= 800
-		@x +=1
+		@x += @speed
 	end
 	def up
 		unless @y - 28 <= 0
-		@y -=2
+		@y -= @speed
 	end
 	def down
 		unless @y + 28 <= 0
-		@y +=2
+		@y += @speed
 	end
 
 end
